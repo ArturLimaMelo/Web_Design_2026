@@ -1,0 +1,56 @@
+:root {
+    --primary-bg-color: hsla(43, 100%, 99%, 0.922);
+}
+
+
+.main {
+    background-color: var(--primary-bg-color);
+}
+
+.header {
+    display: flex;
+    background-color: var(--primary-bg-color);
+    padding: 2rem;
+    height: 5vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: #50695c;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+
+
+.HeaderButtons button {
+    justify-content: space-between;
+    margin: 1rem;
+    font-size: 1rem;
+    background-color: var(--primary-bg-color);
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+.header div {
+    background-color: var(--primary-bg-color);
+}
+
+.DonateButton button {
+    background-color: #198754;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    color: white;
+}
+
+.body {
+    
+}
+
+.footer {
+
+}
