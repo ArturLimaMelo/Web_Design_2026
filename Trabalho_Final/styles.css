@@ -1,10 +1,19 @@
 :root {
-    --primary-bg-color: hsla(43, 100%, 99%, 0.922);
+    --primary-bg-color: #FFFEFAEB;
+    --primary-btn-bg-color: #198754;
+    --primary-text-color: #0e4e30;
+    --primary-text-color-contrast: #ef9b22;
+    --secondary-text-color-contrast: #eab845;
+    --primary-card-bg: #174F37;
+    --secondary-card-bg: #ffffff1a;
 }
 
 
 .main {
     background-color: var(--primary-bg-color);
+    height: 100vh;
+    width: 100vw;
+    font-family: Manrope, sans-serif
 }
 
 .header {
@@ -16,6 +25,7 @@
     align-items: center;
     justify-content: space-around;
     color: #50695c;
+    border-bottom: solid #dbdbdb 2px;
 }
 
 .logo {
@@ -40,15 +50,208 @@
 }
 
 .DonateButton button {
-    background-color: #198754;
+    background-color: var(--primary-btn-bg-color);
     font-size: 1.5rem;
     border-radius: 2rem;
     padding: 0.5rem;
     color: white;
+    border: none;
+}
+.connect {
+    display: inline-block;
+    justify-content: left;
+    text-align: left;
+    background-color: white;
+    border-radius: 3rem;
+    padding: 0rem 1rem;
+    grid-area: bodyText;
+    width: content;
+    color: var(--primary-btn-bg-color);
+    font-size: 1rem;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.66);
+}
+.connect h5 {
+    margin: 10px 0px;
+}
+.body {
+    margin: 4rem 20rem;
+    display: grid;
+    grid-template-areas: 
+        "bodyText bodyText"
+        "imgSlider Impact" 
+        "imgSlider DonateNow";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
 }
 
-.body {
-    
+.bodyText p {
+    margin: 0.25rem 0rem 2rem;
+    font-size: 4rem;
+    width: 50%;
+    color: var(--primary-text-color)
+}
+.bodyText p span {
+    color: var(--primary-text-color-contrast);
+}
+
+.bodyText {
+    display: inline;
+    grid-area: bodyText;
+}
+.ImgSlider {
+    grid-area: imgSlider;
+    overflow: hidden;
+    border-radius: 3rem;
+}
+
+.ImgSlider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.Impact {
+    grid-area: Impact;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-card-bg);
+    color: white;
+
+    border-radius: 3rem;
+    padding: 2.5rem;
+
+    margin: 0rem 0rem 1rem;
+    min-height: 350px;
+    box-sizing: border-box;
+}
+
+.NossoImpacto {
+    display: inline-block;
+    align-self: flex-start;
+
+    background-color: var(--secondary-card-bg);
+    color: var(--secondary-text-color-contrast);
+
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ImpactNumber {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 1.5rem 0rem 0rem;
+}
+
+.ImpactNumber h1 {
+    font-size: 4.5rem;
+    margin: 0px;
+    font-weight: 800;
+}
+
+.ImpactNumber span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-text-color-contrast);
+}
+
+.ImpactDescription {
+    font-size: 1.2rem;
+    margin: 0.75rem 0rem 2rem;
+    max-width: 350px;
+}
+
+.ImpactFooter {
+    margin-top: auto;
+    border-top: 1px solid #ffffff20;
+    padding-top: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: #badaca;
+    font-size: 0.9rem;
+
+    position: relative;
+    z-index: 2;
+}
+
+.ImpactPlus {
+    background-color: var(--secondary-text-color-contrast);
+    color: var(--primary-card-bg);
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+}
+
+
+.DonateNow {
+    grid-area: DonateNow;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #f9b83e;
+    color: var(--primary-text-color);
+
+    border-radius: 2rem;
+    padding: 2rem;
+
+    min-height: 140px;
+    box-sizing: border-box;
+}
+
+.DonateText span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #657b55;
+}
+
+.DonateText h2 {
+    font-size: 2rem;
+    margin: 0.25rem 0 0;
+    font-weight: 800;
+}
+
+.DonateArrow {
+    border: none;
+    border-radius: 50%;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    background-color: var(--primary-card-bg);
+    color: white;
+
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .footer {
