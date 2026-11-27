@@ -4,8 +4,11 @@
     --primary-btn-bg-color: #198754;
     --primary-text-color: #0e4e30;
     --primary-text-color-contrast: #ef9b22;
+    --secondary-text-color-contrast: #f1c055;
     --primary-card-bg: #174F37;
     --secondary-card-bg: #ffffff1a;
+    --primary-card-caption: #a5c3b3;
+    --primary-border-color: #dbdbdb44;
 }
 
 
@@ -36,7 +39,7 @@ body {
     justify-content: space-around;
 
     color: #50695c;
-    border-bottom: solid #dbdbdb 2px;
+    border-bottom: solid var(--primary-border-color) 2px;
 }
 
 .logo {
@@ -203,7 +206,7 @@ body {
     align-self: flex-start;
 
     background-color: var(--secondary-card-bg);
-    color: var(--primary-text-color-contrast);
+    color: var(--secondary-text-color-contrast);
 
     border-radius: 2rem;
     padding: 0.5rem 1rem;
@@ -218,7 +221,6 @@ body {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
-
     margin-top: 1.5rem;
 }
 
@@ -234,7 +236,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 
-    color: var(--primary-text-color-contrast);
+    color: var(--secondary-text-color-contrast);
 }
 
 
@@ -413,7 +415,7 @@ body {
     right: 1.5rem;
     top: 1.5rem;
 
-    color: #a5c3b3;
+    color: var(--primary-card-caption);
     font-size: 0.8rem;
 }
 
@@ -512,6 +514,62 @@ body {
 }
 
 
-.footer {
+.footerBody {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
     width: 100%;
+    padding: 0rem 17rem;
+    background-color: var(--primary-card-bg);
+    color: white;
+
+}
+
+.footerText h5 {
+    padding: 2rem 0rem 0rem 0rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footerText h5 span {
+    color: var(--primary-text-color-contrast)
+}
+
+
+.footerText p {
+    font-size: 2rem;
+    width: 80%;
+}
+.footerBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 5rem;
+    font-size: 0.75rem;
+    border-top: solid var(--primary-border-color) 1px; 
+    width: 100%;
+    color: var(--primary-card-caption);
+    padding: 2rem 0rem 4rem;
+}
+
+.Stats {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Stats p {
+    padding: 5rem 1rem;
+    color: var(--primary-card-caption);
+    font-size: 1rem;
+    margin: 0rem;
+}
+
+.Stats p span {
+    font-size: 2.4rem;
+    padding: 0rem;
+    margin: 0rem;
+    color: var(--secondary-text-color-contrast);
 }
