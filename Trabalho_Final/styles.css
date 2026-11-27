@@ -1,29 +1,40 @@
+
 :root {
-    --primary-bg-color: #FFFEFAEB;
+    --primary-bg-color: #FFFEFA;
     --primary-btn-bg-color: #198754;
     --primary-text-color: #0e4e30;
     --primary-text-color-contrast: #ef9b22;
-    --secondary-text-color-contrast: #eab845;
     --primary-card-bg: #174F37;
     --secondary-card-bg: #ffffff1a;
 }
 
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Manrope, sans-serif;
+    background-color: var(--primary-bg-color);
+}
+
 .main {
     background-color: var(--primary-bg-color);
-    height: 100vh;
-    width: 100vw;
-    font-family: Manrope, sans-serif
+    min-height: 100vh;
+    width: 100%;
 }
 
 .header {
     display: flex;
     background-color: var(--primary-bg-color);
-    padding: 2rem;
-    height: 5vh;
+    padding: 1.5rem 2rem;
+    min-height: 90px;
+
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
     color: #50695c;
     border-bottom: solid #dbdbdb 2px;
 }
@@ -32,18 +43,26 @@
     font-size: 2rem;
 }
 
-
-
-.HeaderButtons button {
-    justify-content: space-between;
-    margin: 1rem;
-    font-size: 1rem;
-    background-color: var(--primary-bg-color);
-    padding: 0;
-    border: none;
-    background: none;
+.logo p {
+    margin: 0;
 }
 
+.HeaderButtons {
+    display: flex;
+    align-items: center;
+}
+
+.HeaderButtons button {
+    margin: 1rem;
+    font-size: 1rem;
+
+    background: none;
+    padding: 0;
+    border: none;
+    color: inherit;
+
+    cursor: pointer;
+}
 
 .header div {
     background-color: var(--primary-bg-color);
@@ -51,69 +70,117 @@
 
 .DonateButton button {
     background-color: var(--primary-btn-bg-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 2rem;
-    padding: 0.5rem;
+    padding: 0.7rem 1.2rem;
     color: white;
     border: none;
+    cursor: pointer;
 }
-.connect {
-    display: inline-block;
-    justify-content: left;
-    text-align: left;
-    background-color: white;
-    border-radius: 3rem;
-    padding: 0rem 1rem;
-    grid-area: bodyText;
-    width: content;
-    color: var(--primary-btn-bg-color);
-    font-size: 1rem;
-    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.66);
-}
-.connect h5 {
-    margin: 10px 0px;
-}
+
 .body {
-    margin: 4rem 20rem;
     display: grid;
-    grid-template-areas: 
+
+    grid-template-areas:
+        "Hero"
+        "HowItWorks"
+        "PartnerSection";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+    width: 100%;
+    margin: 0;
+}
+
+.Hero {
+    grid-area: Hero;
+
+    max-width: 1400px;
+    width: 100%;
+
+    margin: 4rem auto 5rem;
+    padding: 0 3rem;
+
+    display: grid;
+
+    grid-template-areas:
         "bodyText bodyText"
-        "imgSlider Impact" 
+        "imgSlider Impact"
         "imgSlider DonateNow";
+
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
+
     gap: 1rem;
+}
+
+
+.bodyText {
+    display: block;
+    grid-area: bodyText;
+}
+
+.connect {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    background-color: white;
+    border-radius: 3rem;
+    padding: 0.5rem 1rem;
+
+    width: fit-content;
+
+    color: var(--primary-btn-bg-color);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.66);
+}
+
+.connect svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.connect h5 {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
 }
 
 .bodyText p {
     margin: 0.25rem 0rem 2rem;
     font-size: 4rem;
-    width: 50%;
-    color: var(--primary-text-color)
+    width: 75%;
+
+    color: var(--primary-text-color);
+    line-height: 1.15;
 }
+
 .bodyText p span {
     color: var(--primary-text-color-contrast);
 }
 
-.bodyText {
-    display: inline;
-    grid-area: bodyText;
-}
 .ImgSlider {
     grid-area: imgSlider;
+
+    min-height: 0;
     overflow: hidden;
     border-radius: 3rem;
 }
 
 .ImgSlider img {
+    display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    display: block;
 }
 
 .Impact {
     grid-area: Impact;
+
     position: relative;
     overflow: hidden;
 
@@ -126,17 +193,17 @@
     border-radius: 3rem;
     padding: 2.5rem;
 
-    margin: 0rem 0rem 1rem;
+    margin: 0;
     min-height: 350px;
-    box-sizing: border-box;
 }
+
 
 .NossoImpacto {
     display: inline-block;
     align-self: flex-start;
 
     background-color: var(--secondary-card-bg);
-    color: var(--secondary-text-color-contrast);
+    color: var(--primary-text-color-contrast);
 
     border-radius: 2rem;
     padding: 0.5rem 1rem;
@@ -146,33 +213,43 @@
     letter-spacing: 1px;
 }
 
+
 .ImpactNumber {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
-    margin: 1.5rem 0rem 0rem;
+
+    margin-top: 1.5rem;
 }
 
 .ImpactNumber h1 {
     font-size: 4.5rem;
-    margin: 0px;
+    margin: 0;
+
     font-weight: 800;
+    letter-spacing: -3px;
 }
 
 .ImpactNumber span {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--secondary-text-color-contrast);
+
+    color: var(--primary-text-color-contrast);
 }
+
 
 .ImpactDescription {
     font-size: 1.2rem;
-    margin: 0.75rem 0rem 2rem;
+    line-height: 1.4;
+
+    margin: 0.75rem 0 2rem;
     max-width: 350px;
 }
 
+
 .ImpactFooter {
     margin-top: auto;
+
     border-top: 1px solid #ffffff20;
     padding-top: 1.25rem;
 
@@ -180,7 +257,7 @@
     align-items: center;
     gap: 1rem;
 
-    color: #badaca;
+    color: #a9c7b8;
     font-size: 0.9rem;
 
     position: relative;
@@ -188,11 +265,12 @@
 }
 
 .ImpactPlus {
-    background-color: var(--secondary-text-color-contrast);
+    background-color: var(--primary-text-color-contrast);
     color: var(--primary-card-bg);
 
     width: 2.5rem;
     height: 2.5rem;
+    flex-shrink: 0;
 
     border-radius: 50%;
 
@@ -218,7 +296,6 @@
     padding: 2rem;
 
     min-height: 140px;
-    box-sizing: border-box;
 }
 
 .DonateText span {
@@ -240,6 +317,7 @@
 
     width: 3.5rem;
     height: 3.5rem;
+    flex-shrink: 0;
 
     background-color: var(--primary-card-bg);
     color: white;
@@ -249,11 +327,191 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align:center;
+
     cursor: pointer;
-    flex-shrink: 0;
 }
 
-.footer {
 
+
+.HowItWorks {
+    grid-area: HowItWorks;
+
+    max-width: 1400px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 2rem 3rem 5rem;
+}
+
+.HowHeader {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+
+    align-items: end;
+    margin-bottom: 2.5rem;
+}
+
+.SectionLabel {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    color: var(--primary-btn-bg-color);
+}
+
+.HowHeader h2 {
+    color: var(--primary-text-color);
+
+    font-size: 3rem;
+    line-height: 1.4;
+
+    max-width: 600px;
+    margin: 0.75rem 0 0;
+}
+
+.HowHeader > p {
+    color: #66756c;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    max-width: 450px;
+    margin-bottom: 0.5rem;
+}
+
+.Steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.StepCard {
+    border: 1px solid #dce8df;
+    border-radius: 1.5rem;
+
+    min-height: 200px;
+    padding: 1.5rem 1.3rem;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+.HighlightCard {
+    border-color: #b7dfca;
+    box-shadow: 0 10px 30px #174f3710;
+}
+
+
+.StepNumber {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+
+    color: #a5c3b3;
+    font-size: 0.8rem;
+}
+
+
+.StepIcon {
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 1rem;
+    background-color: #eaf4ed;
+    color: var(--primary-btn-bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+}
+
+
+.StepContent {
+    margin-top: 2.5rem;
+}
+
+.StepContent h3 {
+    font-size: 1rem;
+    color: var(--primary-text-color);
+
+    margin-bottom: 0.75rem;
+}
+
+.StepContent p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    color: #78857c;
+    margin: 0;
+}
+
+.PartnerSection {
+    grid-area: PartnerSection;
+
+    background-color: #f1f6f0;
+    width: 100%;
+
+    padding: 5rem 3rem;
+}
+
+
+.PartnerBanner {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    background-color: #f9b83e;
+    border-radius: 2.5rem;
+    padding: 3rem 2.5rem;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 2rem;
+    align-items: center;
+}
+
+
+.PartnerText h2 {
+    color: var(--primary-text-color);
+
+    font-size: 2rem;
+    line-height: 1.4;
+
+    max-width: 500px;
+    margin: 0.75rem 0 0;
+}
+
+
+.PartnerCategories {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.PartnerCategories span {
+    background-color: #ffffff40;
+    border: 1px solid #ffffff35;
+    border-radius: 2rem;
+
+    padding: 0.85rem 1.3rem;
+
+    text-align: center;
+    color: var(--primary-text-color);
+    font-size: 0.85rem;
+
+}
+
+
+.footer {
+    width: 100%;
 }
